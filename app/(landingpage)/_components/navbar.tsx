@@ -15,7 +15,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { Menu } from "lucide-react";
+import { Menu, Plus } from "lucide-react";
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
 
 const NavLinks = [
   { label: "Home ", href: "/" },
@@ -58,7 +60,22 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-x-2">
           <ModeToggle />
-          <span>Login</span>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button className="md:block hidden">Login</Button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <Link href="/story">
+              <Button>
+                <Plus className="h-5 w-5 md:mr-2" />
+                <span className="md:block hidden items-center">
+                  Create a story
+                </span>
+              </Button>
+            </Link>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
           <Sheet>
             <SheetTrigger className="md:hidden block">
               <Menu className="w-8 h-8" />
@@ -92,7 +109,11 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
-              <span>Login</span>
+              <SignedOut>
+                <SignInButton>
+                  <Button className="md:hidden block">Login</Button>
+                </SignInButton>
+              </SignedOut>
             </SheetContent>
           </Sheet>
         </div>

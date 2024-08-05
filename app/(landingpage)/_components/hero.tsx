@@ -6,7 +6,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-32 text-center space-y-3 h-full px-5">
+    <section className="flex flex-col items-center justify-center py-32 text-center space-y-3 min-h-full px-5">
       <h2 className="text-sm font-medium">Welcome to Story Career</h2>
       <h1 className="text-3xl md-text-5xl font-bold max-w-2xl">
         Discover and Share Inspring Career Journeys
@@ -19,7 +19,7 @@ const Hero = () => {
       <Link href="/stories">
         <Button>Discover People Stories</Button>
       </Link>
-      <Image src="/reading.svg" alt="reading" width={500} height={500} />
+      <Image src="/reading.svg" alt="reading" width={400} height={400} />
     </section>
   );
 };

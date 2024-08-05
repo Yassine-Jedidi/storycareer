@@ -3,9 +3,9 @@ import Navbar from "./_components/navbar";
 
 const LandingPageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <div className="h-full">
       <Navbar />
-      <main>{children}</main>
+      <main className="h-full">{children}</main>
       footer
     </div>
   );

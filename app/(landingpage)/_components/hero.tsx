@@ -19,7 +19,15 @@ const Hero = () => {
       <Link href="/stories">
         <Button>Discover People Stories</Button>
       </Link>
-      <Image src="/reading.svg" alt="reading" width={400} height={400} />
+      <div className="relative w-full h-64 md:h-96">
+        <Image
+          src="/reading.svg"
+          alt="reading"
+          layout="fill"
+          objectFit="contain"
+          className="w-auto h-auto"
+        />
+      </div>
     </section>
   );
 };

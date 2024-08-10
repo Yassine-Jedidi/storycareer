@@ -7,6 +7,7 @@ import React from "react";
 import TitleForm from "./_components/titleForm";
 import StoryForm from "./_components/storyForm";
 import ImageForm from "./_components/imageForm";
+import DeleteStory from "./_components/deleteStory";
 
 const EditStoryPage = async ({ params }: { params: { storyId: string } }) => {
   const { userId } = auth();
@@ -32,9 +33,12 @@ const EditStoryPage = async ({ params }: { params: { storyId: string } }) => {
         <TitleForm initialData={story} />
         <StoryForm initialData={story} />
         <ImageForm initialData={story} />
-        <Link href="/story">
-          <Button variant={"link"}>Back to my stories</Button>
-        </Link>
+        <div className="flex items-center justify-between gap-5">
+          <Link href="/story">
+            <Button variant={"link"}>Back to my stories</Button>
+          </Link>
+          <DeleteStory initialData={story} />
+        </div>
       </div>
     </div>
   );

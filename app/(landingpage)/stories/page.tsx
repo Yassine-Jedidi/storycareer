@@ -1,9 +1,7 @@
 import prisma from "@/prisma/client";
-import axios from "axios";
 import React from "react";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,

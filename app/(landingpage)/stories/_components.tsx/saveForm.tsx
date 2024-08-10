@@ -29,8 +29,8 @@ const SaveForm = ({ story, saves }: Props) => {
         userId,
       });
       if (response.status === 201) {
-        toast("Story is saved");
         router.refresh();
+        toast("Story is saved");
       }
     } catch (error) {
       toast("Something went wrong", {
@@ -38,6 +38,22 @@ const SaveForm = ({ story, saves }: Props) => {
       });
     }
   };
+
+  const handleRemoveSave = async (saveId: string) => {
+    try {
+      const response = await axios.delete(`/api/save/${saveId}`);
+      if (response.status === 201) {
+        router.refresh();
+        toast("Save is removed");
+      }
+    } catch (error) {
+      toast("Something went wrong", {
+        className: "bg-rose-500 text-white",
+      });
+    } finally {
+    }
+  };
+
   return !getSave ? (
     <Button variant={"ghost"} onClick={handleSave}>
       <Heart />

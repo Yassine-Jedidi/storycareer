@@ -14,7 +14,7 @@ const Hero = () => {
       <p className="max-w-lg text-muted-foreground">
         Story Career is a unique platform where individuals from all walks of
         life can share their career stories, challenges, and successes. Whether
-        you're just starting out.
+        you&apos;re just starting out.
       </p>
       <Link href="/stories">
         <Button>Discover People Stories</Button>

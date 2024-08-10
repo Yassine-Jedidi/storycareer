@@ -64,7 +64,7 @@ const NewStoryPage = () => {
         <div>
           <h1 className="text-2xl font-semibold">Give your story a title</h1>
           <p className="text-sm text-muted-foreground">
-            Name your story, don't worry you can change it later.
+            Name your story, don&apos;t worry you can change it later.
           </p>
         </div>
         <Form {...form}>
